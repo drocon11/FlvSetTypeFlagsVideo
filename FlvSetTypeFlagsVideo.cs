@@ -30,7 +30,7 @@ class App
     {
         if (String.Equals(file.Extension, ".flv", StringComparison.OrdinalIgnoreCase))
         {
-            using (FileStream fs = new FileStream(file.FullName, FileMode.Open, FileAccess.ReadWrite))
+            using (FileStream fs = new FileStream(file.FullName, FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite))
             {
                 byte[] header = new byte[9]; // header size = 9 for FLV version 1
                 if (fs.Read(header, 0, header.Length) == header.Length)
