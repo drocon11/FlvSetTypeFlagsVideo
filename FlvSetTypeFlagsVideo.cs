@@ -41,6 +41,7 @@ class App
                         header[4] |= 0x01; // TypeFlagsVideo (0x01), TypeFlagsAudio (0x04)
                         fs.Seek(0, SeekOrigin.Begin);
                         fs.Write(header, 0, header.Length);
+                        Console.WriteLine("FlvSetTypeFlagsVideo : {0}", file.FullName);
                     }
                 }
             }
